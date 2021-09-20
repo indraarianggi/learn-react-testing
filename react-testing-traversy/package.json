@@ -50,6 +50,7 @@
     "@cypress/code-coverage": "3.9.10",
     "@cypress/instrument-cra": "1.4.0",
     "@percy/cypress": "2.3.4",
+    "@testing-library/cypress": "^8.0.1",
     "@testing-library/user-event": "^13.2.1",
     "@types/bcryptjs": "2.4.2",
     "@types/bluebird": "3.5.36",
@@ -88,6 +89,7 @@
     "concurrently": "6.2.0",
     "cors": "2.8.5",
     "cross-env": "7.0.3",
+    "cypress": "^8.4.1",
     "dotenv": "10.0.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-cypress": "2.11.3",
@@ -172,8 +174,7 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "codesandbox:start:api": "yarn tsnode:not-instrumented --files backend/app.ts",
-    "codesandbox:start": "NODE_ENV=development TSC_COMPILE_ON_ERROR=true concurrently \"react-scripts start\" yarn:start:api:codesandbox",
-    "postinstall": "husky install"
+    "codesandbox:start": "NODE_ENV=development TSC_COMPILE_ON_ERROR=true concurrently \"react-scripts start\" yarn:start:api:codesandbox"
   },
   "eslintConfig": {
     "env": {
@@ -197,11 +198,6 @@
       "<rootDir>/data/database.json",
       "<rootDir>/data/database-seed.json"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn types"
-    }
   },
   "browserslist": {
     "production": [
