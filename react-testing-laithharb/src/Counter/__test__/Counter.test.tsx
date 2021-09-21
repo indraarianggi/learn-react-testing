@@ -2,8 +2,15 @@ import Counter from "../Counter";
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
+let getByTestId: any;
+
+// Function that run before each test
+beforeEach(() => {
+  const component = render(<Counter />);
+  getByTestId = component.getByTestId;
+});
+
 test("header renders with correct text", () => {
-  const { getByTestId } = render(<Counter />);
   const headerElm = getByTestId("header");
 
   // assertion
@@ -11,7 +18,6 @@ test("header renders with correct text", () => {
 });
 
 test("counter initially start with text of 0", () => {
-  const { getByTestId } = render(<Counter />);
   const counterElm = getByTestId("counter");
 
   // assertion
@@ -19,7 +25,6 @@ test("counter initially start with text of 0", () => {
 });
 
 test("input contains intial value of 1", () => {
-  const { getByTestId } = render(<Counter />);
   const inputElm = getByTestId("input");
 
   // assertion
@@ -27,7 +32,6 @@ test("input contains intial value of 1", () => {
 });
 
 test("add button renders with +", () => {
-  const { getByTestId } = render(<Counter />);
   const addBtn = getByTestId("add-btn");
 
   // assertion
@@ -35,7 +39,6 @@ test("add button renders with +", () => {
 });
 
 test("subtract button renders with -", () => {
-  const { getByTestId } = render(<Counter />);
   const subtractBtn = getByTestId("subtract-btn");
 
   // assertion
@@ -44,7 +47,6 @@ test("subtract button renders with -", () => {
 
 // Testing functionality
 test("change value of input works correctly", () => {
-  const { getByTestId } = render(<Counter />);
   const inputElm = getByTestId("input");
 
   // assertion at intial render
@@ -58,7 +60,6 @@ test("change value of input works correctly", () => {
 });
 
 test("click on add button adds 1 to counter", () => {
-  const { getByTestId } = render(<Counter />);
   const addBtn = getByTestId("add-btn");
   const counterElm = getByTestId("counter");
 
@@ -73,7 +74,6 @@ test("click on add button adds 1 to counter", () => {
 });
 
 test("click on subtract button subtracts 1 to counter", () => {
-  const { getByTestId } = render(<Counter />);
   const subtractBtn = getByTestId("subtract-btn");
   const counterElm = getByTestId("counter");
 
@@ -88,7 +88,6 @@ test("click on subtract button subtracts 1 to counter", () => {
 });
 
 test("changing input value then clicking on add button works correctly", () => {
-  const { getByTestId } = render(<Counter />);
   const addBtn = getByTestId("add-btn");
   const counterElm = getByTestId("counter");
   const inputElm = getByTestId("input");
@@ -102,7 +101,6 @@ test("changing input value then clicking on add button works correctly", () => {
 });
 
 test("changing input value then clicking on subtract button works correctly", () => {
-  const { getByTestId } = render(<Counter />);
   const subtractBtn = getByTestId("subtract-btn");
   const counterElm = getByTestId("counter");
   const inputElm = getByTestId("input");
@@ -116,7 +114,6 @@ test("changing input value then clicking on subtract button works correctly", ()
 });
 
 test("adding and then subtracting leads to the correct counter number", () => {
-  const { getByTestId } = render(<Counter />);
   const addBtn = getByTestId("add-btn");
   const subtractBtn = getByTestId("subtract-btn");
   const counterElm = getByTestId("counter");
@@ -145,7 +142,6 @@ test("adding and then subtracting leads to the correct counter number", () => {
 });
 
 test("counter contains correct className", () => {
-  const { getByTestId } = render(<Counter />);
   const addBtn = getByTestId("add-btn");
   const subtractBtn = getByTestId("subtract-btn");
   const counterElm = getByTestId("counter");
