@@ -43,6 +43,7 @@
 
 ## Resources
 
-| Folder                 | Source                                                                                      |
-| ---------------------- | ------------------------------------------------------------------------------------------- |
-| react-testing-traversy | [React Testing Crash Course by Traversy Media](https://www.youtube.com/watch?v=OVNjsIto9xM) |
+| Folder                  | Source                                                                                                |
+| ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| react-testing-traversy  | [React Testing Crash Course by Traversy Media](https://www.youtube.com/watch?v=OVNjsIto9xM)           |
+| react-testing-laithharb | [React Testing Library Crash Course by Laith Harb](https://www.youtube.com/watch?v=GLSSRtnNY0g&t=41s) |
