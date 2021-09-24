@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login /> with no props should match the snapshot 1`] = `"<form><input type=\\"email\\" placeholder=\\"email\\" data-value=\\"\\"/><input type=\\"password\\" placeholder=\\"password\\" value=\\"\\"/><input type=\\"button\\" value=\\"Submit\\" disabled=\\"\\"/></form>"`;

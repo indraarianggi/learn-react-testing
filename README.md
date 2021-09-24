@@ -43,7 +43,9 @@
 
 ## Resources
 
-| Folder                  | Source                                                                                                |
-| ----------------------- | ----------------------------------------------------------------------------------------------------- |
-| react-testing-traversy  | [React Testing Crash Course by Traversy Media](https://www.youtube.com/watch?v=OVNjsIto9xM)           |
-| react-testing-laithharb | [React Testing Library Crash Course by Laith Harb](https://www.youtube.com/watch?v=GLSSRtnNY0g&t=41s) |
+| Folder                  | Source                                                                                                                                                            |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| react-testing-traversy  | [React Testing Crash Course by Traversy Media](https://www.youtube.com/watch?v=OVNjsIto9xM)                                                                       |
+| react-testing-laithharb | [React Testing Library Crash Course by Laith Harb](https://www.youtube.com/watch?v=GLSSRtnNY0g&t=41s)                                                             |
+| react-testing-pmez      | [TDD Live Coding - Test Driven Development Tutorial with React, Jest, and Enzyme](https://www.youtube.com/watch?v=tX-gu6FWcsE)                                    |
+| react-testing-fc-hooks  | [Testing React Function Components with Hooks using Enzyme](https://acesmndr.medium.com/testing-react-functional-components-with-hooks-using-enzyme-f732124d320a) |
