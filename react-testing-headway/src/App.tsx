@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { api } from "./api";
 import { IItem } from "./types";
 
 function App() {
@@ -18,8 +19,10 @@ function App() {
       text,
     };
 
-    setText("");
-    setItems((prevItems) => [...prevItems, newItem]);
+    api.createItem("/items", newItem).then((persistedItem) => {
+      setText("");
+      setItems((prevItems) => [...prevItems, persistedItem]);
+    });
   };
 
   return (
