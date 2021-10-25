@@ -1,4 +1,10 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import {
+  render,
+  screen,
+  fireEvent,
+  waitFor,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Counter from ".";
 
@@ -17,10 +23,12 @@ describe("Counter Component", () => {
     });
 
     describe("when + button is clicked", () => {
-      it('should renders "Current Count: 1"', () => {
+      it('should renders "Current Count: 1"', async () => {
         fireEvent.click(screen.getByRole("button", { name: "Increment" }));
 
-        expect(screen.getByText("Current Count: 1")).toBeInTheDocument();
+        await waitFor(() =>
+          expect(screen.getByText("Current Count: 1")).toBeInTheDocument()
+        );
       });
     });
 
@@ -47,13 +55,36 @@ describe("Counter Component", () => {
     });
 
     describe('when the incrementor changes to 5 and "+" button is clicked', () => {
-      beforeEach(() => {
+      beforeEach(async () => {
         userEvent.type(screen.getByLabelText(/Incrementor/), "{selectall}5");
         userEvent.click(screen.getByRole("button", { name: "Increment" }));
+        await waitFor(() => screen.getByText("Current Count: 15"));
       });
 
       it('should renders "Current Count: 15"', () => {
         expect(screen.getByText("Current Count: 15")).toBeInTheDocument();
+      });
+
+      // Documentation: https://testing-library.com/docs/guide-disappearance/#waiting-for-disappearance
+      it("should renders too big, and will disappear after 300ms", async () => {
+        await waitForElementToBeRemoved(() =>
+          screen.queryByText("I am too small")
+        );
+      });
+
+      describe('when the incrementor changes to empty string and "+" button is clicked', () => {
+        beforeEach(async () => {
+          userEvent.type(
+            screen.getByLabelText(/Incrementor/),
+            "{selectall}{delete}"
+          );
+          userEvent.click(screen.getByRole("button", { name: "Increment" }));
+          await waitFor(() => screen.getByText("Current Count: 16"));
+        });
+
+        it('should renders "Current Count: 16"', () => {
+          expect(screen.getByText("Current Count: 16")).toBeInTheDocument();
+        });
       });
     });
 

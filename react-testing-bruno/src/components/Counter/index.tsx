@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export interface ICounterProps {
   description: string;
@@ -8,6 +8,19 @@ export interface ICounterProps {
 const Counter = ({ description, defaultCount }: ICounterProps) => {
   const [count, setCount] = useState(defaultCount);
   const [incrementor, setIncrementor] = useState(1);
+  const [bigEnough, setBigEnough] = useState(defaultCount >= 15);
+
+  useEffect(() => {
+    let timerId: NodeJS.Timeout;
+
+    if (count >= 15) {
+      timerId = setTimeout(() => setBigEnough(true), 300);
+    }
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  });
 
   return (
     <div>
@@ -35,10 +48,11 @@ const Counter = ({ description, defaultCount }: ICounterProps) => {
       Current Count: {count}
       <button
         aria-label="Increment"
-        onClick={() => setCount(count + incrementor)}
+        onClick={() => setTimeout(() => setCount(count + incrementor), 200)}
       >
         +
       </button>
+      {bigEnough ? null : <div>I am too small</div>}
     </div>
   );
 };
