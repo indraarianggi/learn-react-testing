@@ -50,3 +50,4 @@
 | react-testing-pmez      | [TDD Live Coding - Test Driven Development Tutorial with React, Jest, and Enzyme](https://www.youtube.com/watch?v=tX-gu6FWcsE)                                    |
 | react-testing-fc-hooks  | [Testing React Function Components with Hooks using Enzyme](https://acesmndr.medium.com/testing-react-functional-components-with-hooks-using-enzyme-f732124d320a) |
 | react-testing-headway   | [Intro to React Testing [Jest and React Testing Library Tutorial]](https://www.youtube.com/watch?v=ZmVBCpefQe8)                                                   |
+| react-testing-bruno     | [React.js Unit Testing and Integration Testing Tutorial](https://www.youtube.com/playlist?list=PLYSZyzpwBEWTBdbfStjqJSGaulqcHoNkT)                                |
